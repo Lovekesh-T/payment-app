@@ -18,7 +18,7 @@ function App() {
     console.log(`Bearer ${localStorage.getItem("token")}`);
     (async () => {
       try {
-        const { data } = await axios.get("http://localhost:8000/api/v1/user", {
+        const { data } = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/v1/user`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

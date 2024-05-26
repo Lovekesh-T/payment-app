@@ -18,7 +18,7 @@ const Signup = () => {
     e.preventDefault();
     
    try {
-     const response =  await axios.post("http://localhost:8000/api/v1/user/create",{firstname,lastname,password,email});
+     const response =  await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/v1/user/create`,{firstname,lastname,password,email});
      setFirstname("");
      setLastname("");
      setPassword("");

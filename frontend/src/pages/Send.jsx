@@ -17,7 +17,7 @@ const Send = () => {
     if (!to || !amount) return;
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/account/transfer",
+        `${import.meta.env.VITE_SERVER_URL}/api/v1/user/account/transfer`,
         { to, amount },
         {
           headers: {

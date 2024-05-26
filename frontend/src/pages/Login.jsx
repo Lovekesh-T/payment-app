@@ -22,7 +22,7 @@ const Login = () => {
     try {
       setIsLoading(true);
       const { data } = await axios.post(
-        "http://localhost:8000/api/v1/user/login",
+        `${import.meta.env.VITE_SERVER_URL}/api/v1/user/login`,
         { email, password }
       );
       setEmail("");
@@ -30,7 +30,7 @@ const Login = () => {
       localStorage.setItem("token", data.token);
       const {
         data: { user },
-      } = await axios.get("http://localhost:8000/api/v1/user", {
+      } = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/v1/user`, {
         headers: {
           Authorization: `Bearer ${data.token}`,
         },

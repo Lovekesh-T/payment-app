@@ -24,12 +24,12 @@ const Dashboard = () => {
             data: { users },
           },
         ] = await Promise.all([
-          axios.get("http://localhost:8000/api/v1/user/balance", {
+          axios.get(`${import.meta.env.VITE_SERVER_URL}/api/v1/user/balance`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
           }),
-          axios.get("http://localhost:8000/api/v1/user/bulk", {
+          axios.get(`${import.meta.env.VITE_SERVER_URL}/api/v1/user/bulk`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -49,7 +49,7 @@ const Dashboard = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8000/api/v1/user/bulk?filter=${filter}`,
+          `${import.meta.env.VITE_SERVER_URL}/api/v1/user/bulk?filter=${filter}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
