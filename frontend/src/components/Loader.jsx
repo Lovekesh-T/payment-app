@@ -2,15 +2,11 @@
 
 export default function Loader() {
   return (
-    <div className="flex h-screen justify-center items-center">
-
-    <div
-    className="inline-block h-15 w-15 animate-spin text-blue-500 rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-    role="status">
-    <span
-      className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-      >Loading...</span>
-  </div>
-      </div>
+    <div className='flex space-x-2 justify-center items-center bg-white h-screen dark:invert'>
+ 	<span className='sr-only'>Loading...</span>
+  	<div className='h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+	<div className='h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+	<div className='h-8 w-8 bg-black rounded-full animate-bounce'></div>
+</div>
   );
 }
