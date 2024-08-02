@@ -15,9 +15,10 @@ function App() {
   const [user, setUser] = useRecoilState(userAtom);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    console.log(`Bearer ${localStorage.getItem("token")}`);
+    
     (async () => {
       try {
+       if(!localStorage.getItem("token")) throw new Error("Invalid token");
         const { data } = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/v1/user`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
