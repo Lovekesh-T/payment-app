@@ -57,12 +57,14 @@ const Login = () => {
             placeholder={"John@gmail.com"}
             value={email}
             changeHandle={setEmail}
+            type={"email"}
           />
           <InputBox
             label={"Password"}
             placeholder={""}
             value={password}
             changeHandle={setPassword}
+            type={"password"}
           />
           {isLoading ? (
             <button

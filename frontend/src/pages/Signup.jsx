@@ -40,10 +40,10 @@ const Signup = () => {
           <SubHeading text={"Enter your information to create a account"}/>
         </div>
         <form className="flex flex-col gap-3" onSubmit={action}>
-          <InputBox label={"First Name"} placeholder={"John"} value={firstname} changeHandle={setFirstname}/>
-          <InputBox label={"Last Name"} placeholder={"Doe"} value={lastname} changeHandle={setLastname}/>
-          <InputBox label={"Email"} placeholder={"John@gmail.com"} value={email} changeHandle={setEmail}/>
-          <InputBox label={"Password"} placeholder={""} value={password} changeHandle={setPassword}/>
+          <InputBox type={"text"} label={"First Name"} placeholder={"John"} value={firstname} changeHandle={setFirstname}/>
+          <InputBox type={"text"} label={"Last Name"} placeholder={"Doe"} value={lastname} changeHandle={setLastname}/>
+          <InputBox type={"email"} label={"Email"} placeholder={"John@gmail.com"} value={email} changeHandle={setEmail}/>
+          <InputBox type={"password"} label={"Password"} placeholder={""} value={password} changeHandle={setPassword}/>
           <Button text={"Sign Up"} />
           <p className="text-center text-sm">Already have a account? <Link to={"/login"} className="underline text-sm">Login</Link></p>
 
